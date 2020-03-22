@@ -1352,6 +1352,11 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
+node-fetch@^2.6.0:
+  version "2.6.0"
+  resolved "https://artifactory.onelum.host/artifactory/api/npm/lap-npm-virtual/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
+  integrity sha1-5jNFY4bUqlWGP2dqerDaqP3ssP0=
+
 node-releases@^1.1.52:
   version "1.1.52"
   resolved "https://artifactory.onelum.host/artifactory/api/npm/lap-npm-virtual/node-releases/-/node-releases-1.1.52.tgz#bcffee3e0a758e92e44ecfaecd0a47554b0bcba9"
