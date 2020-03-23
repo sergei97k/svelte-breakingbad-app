@@ -6,8 +6,12 @@
         {:else}
         <p>No results</p>
     {/each}
+
+    <Pagination />
 </div>
 
 <script>
+    import Pagination from './Pagination.svelte';
+
     export let characters;
 </script>

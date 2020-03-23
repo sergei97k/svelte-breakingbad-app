@@ -11,8 +11,10 @@
 </script>
 
 <script context="module">
-	export async function preload({ params }) {
-		const res = await this.fetch(`characters.json`);
+	import { stringify } from 'query-string';
+
+	export async function preload({ params, query }) {
+		const res = await this.fetch(`characters.json?${stringify(query)}`);
 		const data = await res.json();
 
 		if (res.status === 200) {
