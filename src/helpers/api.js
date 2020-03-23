@@ -8,7 +8,6 @@ const api = (path) => {
     .then(r => r.text())
     .then(json => {
       try {
-        console.log(json);
         return JSON.parse(json);
       } catch (err) {
         return json;

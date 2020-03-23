@@ -2,10 +2,12 @@
 	<title>Svelte Breaking Bad App</title>
 </svelte:head>
 
+<CharactersList {characters} />
 
 <script>
+	import CharactersList from "../components/CharactersList.svelte";
+
 	export let characters;
-	console.log('characters', characters);
 </script>
 
 <script context="module">
