@@ -5,9 +5,14 @@
 <CharactersList {characters} />
 
 <script>
+	import { goto } from '@sapper/app';
+	import filters from '../stores/filters';
 	import CharactersList from "../components/CharactersList.svelte";
 
 	export let characters;
+
+	// Router method to update the router params
+	$: $filters && goto(`?${$filters}`);
 </script>
 
 <script context="module">

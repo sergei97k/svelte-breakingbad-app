@@ -1,32 +1,42 @@
 <ul>
     <li>
-        <button disabled="{offset === 0}">Prev</button>
+        <button on:click={setPage} value={$offset - $limit} disabled="{isFirstPage()}">
+            Prev
+        </button>
     </li>
 
     {#each pages as page}
         <li class:active={isCurrent(page)}>
-            <button>{page}</button>
+            <button on:click={setPage} value={getOffset(page)}>{page}</button>
         </li>
     {/each}
 
     <li>
-        <button disabled="{offset * limit >= total}">Next</button>
+        <button on:click={setPage} value={$offset + $limit} disabled="{isLastPage()}">
+            Next
+        </button>
     </li>
 </ul>
 
 <script>
-    let offset = 0;
-    let limit = 10;
-    let total = 63;
+    import { offset, limit } from '../stores/filters';
+    import { TOTAL_AMOUNT } from '../helpers/api';
+
     let pages = [];
 
+    function setPage({ target: { value }}) {
+      $offset = Number(value);
+    }
+
     $: {
-      const length = Math.ceil(total / limit);
+      const length = Math.ceil(TOTAL_AMOUNT / $limit);
       pages = Array.apply(null, { length }).map((_, i) => ++i);
     }
 
-    $: isCurrent = page => offset === ((page * limit) - limit);
-    $: getOffset = page => (page - 1) * limit;
+    $: isCurrent = page => $offset === ((page * $limit) - $limit);
+    $: isFirstPage = () => $offset === 0;
+    $: isLastPage = () => $offset + $limit >= TOTAL_AMOUNT;
+    $: getOffset = page => (page - 1) * $limit;
 </script>
 
 <style>
