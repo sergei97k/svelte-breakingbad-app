@@ -4,9 +4,15 @@
 
 <div>
     {character.name}
+    <br>
+    {character.birthday === 'Unknown' ?
+        character.birthday :
+        dayjs(character.birthday).format('DD.MM.YYYY')}
 </div>
 
 <script>
+    import dayjs from 'dayjs';
+
     export let character;
 </script>
 
