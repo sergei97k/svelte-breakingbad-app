@@ -1,6 +1,4 @@
 <div>
-    <Filter />
-
     {#if $preloading}
         <Spinner
             size="50"
@@ -27,7 +25,6 @@
     import Spinner from 'svelte-spinner';
 
     import Pagination from './Pagination.svelte';
-    import Filter from './Filter.svelte';
 
     const { preloading } = stores();
 

@@ -2,6 +2,7 @@ import { stringify } from 'query-string';
 
 const API_URL = 'https://www.breakingbadapi.com/api';
 export const TOTAL_AMOUNT = 63;
+export const limit = 10;
 
 const api = (path, params) => {
   const fetch = process.browser ? window.fetch : require('node-fetch').default;
