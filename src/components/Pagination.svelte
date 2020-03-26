@@ -45,8 +45,8 @@
     }
 
     .pagination a.active {
-        background-color: #4CAF50;
-        color: white;
+        background-color: var(--main-color);
+        color: var(--text-color);
         border-radius: 5px;
     }
 
