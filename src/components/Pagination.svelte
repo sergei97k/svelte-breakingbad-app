@@ -50,6 +50,15 @@
         border-radius: 5px;
     }
 
+    .pagination a.disabled {
+        color: grey;
+        opacity: 0.5;
+
+        cursor: not-allowed;
+        text-decoration: none;
+        pointer-events: none;
+    }
+
     .pagination a:hover:not(.active) {
         background-color: #ddd;
         border-radius: 5px;
