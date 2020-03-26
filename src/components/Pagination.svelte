@@ -1,28 +1,24 @@
-<ul>
-    <li>
-        <a href="?offset={offset - limit}" disabled="{isFirstPage()}">
-            Prev
-        </a>
-    </li>
+<div class="pagination">
+    <a href="?offset={offset - limit}" class:disabled="{isFirstPage()}">
+        &laquo;
+    </a>
 
     {#each pages as page}
-        <li class:active={isCurrent(page)}>
-            <a href="?offset={getOffset(page)}">{page}</a>
-        </li>
+        <a href="?offset={getOffset(page)}" class:active={isCurrent(page)}>
+            {page}
+        </a>
     {/each}
 
-    <li>
-        <a href="?offset={offset + limit}" disabled="{isLastPage()}">
-            Next
-        </a>
-    </li>
-</ul>
+    <a href="?offset={offset + limit}" class:disabled="{isLastPage()}">
+        &raquo;
+    </a>
+</div>
 
 <script>
     import { TOTAL_AMOUNT, limit } from '../helpers/api';
 
+    export let offset;
     let pages = [];
-    let offset = 0;
 
     $: {
       const length = Math.ceil(TOTAL_AMOUNT / limit);
@@ -36,7 +32,36 @@
 </script>
 
 <style>
-    .active button {
-        background-color: grey;
+    .pagination {
+        display: inline-block;
+    }
+
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+    }
+
+    .pagination a.active {
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .pagination a:hover:not(.active) {
+        background-color: #ddd;
+        border-radius: 5px;
+    }
+
+    .pagination a:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .pagination a:last-child {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
     }
 </style>

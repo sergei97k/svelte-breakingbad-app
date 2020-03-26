@@ -15,9 +15,9 @@
             {:else}
             <p>No results</p>
         {/each}
-    {/if}
 
-    <Pagination />
+        <Pagination {offset} />
+    {/if}
 </div>
 
 <script>
@@ -29,4 +29,5 @@
     const { preloading } = stores();
 
     export let characters;
+    export let offset;
 </script>

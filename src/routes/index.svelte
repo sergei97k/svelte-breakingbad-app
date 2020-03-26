@@ -2,12 +2,13 @@
 	<title>Svelte Breaking Bad App</title>
 </svelte:head>
 
-<CharactersList {characters} />
+<CharactersList {characters} {offset} />
 
 <script>
 	import CharactersList from "../components/CharactersList.svelte";
 
 	export let characters;
+	export let offset;
 </script>
 
 <script context="module">
@@ -18,7 +19,7 @@
 		const data = await res.json();
 
 		if (res.status === 200) {
-			return { characters: data };
+			return { characters: data, offset: +query.offset };
 		} else {
 			this.error(res.status, data.message);
 		}
