@@ -3,6 +3,15 @@
 </svelte:head>
 
 <CharactersList {characters} {offset} />
+<CharactersList {characters} {offset} />
+<CharactersList {characters} {offset} />
+<CharactersList {characters} {offset} />
+<CharactersList {characters} {offset} />
+<CharactersList {characters} {offset} />
+<CharactersList {characters} {offset} />
+<CharactersList {characters} {offset} />
+<CharactersList {characters} {offset} />
+<CharactersList {characters} {offset} />
 
 <script>
 	import CharactersList from "../components/CharactersList.svelte";

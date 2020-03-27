@@ -1,7 +1,5 @@
 <div class="grid-container">
-	<header class="header">
-		BreakingBad
-	</header>
+	<Header />
 
 	<Nav {segment} class="sidebar" />
 
@@ -11,6 +9,7 @@
 </div>
 
 <script>
+	import Header from '../components/Header.svelte';
 	import Nav from '../components/Nav.svelte';
 
 	export let segment;
@@ -26,7 +25,7 @@
 				'sidebar main main'
 	}
 
-	.header {
+	:global(.header) {
 		grid-area: header;
 	}
 	.main {
