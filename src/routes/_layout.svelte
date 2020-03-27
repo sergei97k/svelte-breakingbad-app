@@ -1,8 +1,14 @@
-<Nav {segment}/>
+<div class="grid-container">
+	<header class="header">
+		BreakingBad
+	</header>
 
-<main>
-	<slot></slot>
-</main>
+	<Nav {segment} class="sidebar" />
+
+	<main class="main">
+		<slot></slot>
+	</main>
+</div>
 
 <script>
 	import Nav from '../components/Nav.svelte';
@@ -11,12 +17,37 @@
 </script>
 
 <style>
-	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
+	.grid-container {
+		display: grid;
+		grid-gap: 20px;
+		grid-template-columns: 300px 1fr;
+		grid-template-areas:
+				'header header header'
+				'sidebar main main'
+	}
+
+	.header {
+		grid-area: header;
+	}
+	.main {
+		grid-area: main;
+	}
+	.sidebar {
+		grid-area: sidebar;
+	}
+
+	@media (max-width: 1023px) {
+		.grid-container  {
+			grid-template-columns: 150px 1fr;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.grid-container  {
+			grid-template-areas:
+					'header header'
+					'sidebar sidebar'
+					'main main';
+		}
 	}
 </style>
