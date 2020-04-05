@@ -1,7 +1,7 @@
 <div class="grid-container">
 	<Header />
 
-	<Nav {segment} class="sidebar" />
+	<Nav />
 
 	<main class="main">
 		<slot></slot>
@@ -11,14 +11,12 @@
 <script>
 	import Header from '../components/Header.svelte';
 	import Nav from '../components/Nav.svelte';
-
-	export let segment;
 </script>
 
 <style>
 	.grid-container {
 		display: grid;
-		grid-gap: 20px;
+		grid-gap: 0 20px;
 		grid-template-columns: 300px 1fr;
 		grid-template-areas:
 				'header header header'
@@ -28,20 +26,20 @@
 	:global(.header) {
 		grid-area: header;
 	}
-	.main {
+	:global(.main) {
 		grid-area: main;
 	}
-	.sidebar {
+	:global(.sidebar) {
 		grid-area: sidebar;
 	}
 
-	@media (max-width: 1023px) {
+	@media screen and (max-width: 1023px) {
 		.grid-container  {
 			grid-template-columns: 150px 1fr;
 		}
 	}
 
-	@media (max-width: 767px) {
+	@media screen and (max-width: 767px) {
 		.grid-container  {
 			grid-template-areas:
 					'header header'

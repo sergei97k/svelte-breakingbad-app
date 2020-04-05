@@ -7,7 +7,8 @@
         background-color: var(--background-color);
         padding: 20px 30px;
         position: sticky;
-        top:0;
+        top: 0;
+        z-index: 999;
     }
 
     .logo {
