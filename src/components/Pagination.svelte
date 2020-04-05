@@ -17,7 +17,7 @@
 <script>
     import { TOTAL_AMOUNT, limit } from '../helpers/api';
 
-    export let offset;
+    export let offset = 0;
     let pages = [];
 
     $: {

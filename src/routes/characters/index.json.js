@@ -1,10 +1,11 @@
-import api, { limit } from '../../helpers/api';
+import api, { limit, DEFAULT_OFFSET } from '../../helpers/api';
 
 export function get(req, res) {
   // Need to set the default limit and offset params to API
+  const offset = req.query.offset || DEFAULT_OFFSET;
   const query = {
     limit,
-    offset: req.query.offset || 0
+    offset
   };
 
   api('characters', query).then( data => {
@@ -12,6 +13,9 @@ export function get(req, res) {
       'Content-Type': 'application/json'
     });
 
-    res.end(JSON.stringify(data));
+    res.end(JSON.stringify({
+      characters: data,
+      offset: Number(offset)
+    }));
   });
 }

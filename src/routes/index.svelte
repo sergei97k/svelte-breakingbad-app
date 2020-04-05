@@ -3,15 +3,6 @@
 </svelte:head>
 
 <CharactersList {characters} {offset} />
-<CharactersList {characters} {offset} />
-<CharactersList {characters} {offset} />
-<CharactersList {characters} {offset} />
-<CharactersList {characters} {offset} />
-<CharactersList {characters} {offset} />
-<CharactersList {characters} {offset} />
-<CharactersList {characters} {offset} />
-<CharactersList {characters} {offset} />
-<CharactersList {characters} {offset} />
 
 <script>
 	import CharactersList from "../components/CharactersList.svelte";
@@ -25,12 +16,12 @@
 
 	export async function preload({ params, query }) {
 		const res = await this.fetch(`characters.json?${stringify(query)}`);
-		const data = await res.json();
+		const { characters, offset } = await res.json();
 
 		if (res.status === 200) {
-			return { characters: data, offset: +query.offset };
+			return { characters, offset };
 		} else {
-			this.error(res.status, data.message);
+			this.error(res.status);
 		}
 	}
 </script>
