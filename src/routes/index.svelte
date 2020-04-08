@@ -25,11 +25,3 @@
 		}
 	}
 </script>
-
-<style>
-	:global(:root) {
-		--main-color: rgb(72, 127, 90);
-		--text-color: white;
-		--background-color: rgb(59, 59, 59);
-	}
-</style>

@@ -1,14 +1,16 @@
-<div>
+<div class="container">
     {#if $preloading}
-        <Spinner
-            size="50"
-            speed="750"
-            color="#A82124"
-            thickness="2"
-            gap="40"
-        />
+        <div class="spinner">
+            <Spinner
+                    size="75"
+                    speed="750"
+                    color="#487f5a"
+                    thickness="3"
+                    gap="40"
+            />
+        </div>
     {:else}
-        <div class="container">
+        <div class="list">
             {#each characters as character}
                 <Card {character} />
             {:else}
@@ -16,7 +18,9 @@
             {/each}
         </div>
 
-        <Pagination {offset} />
+        <div class="pagination">
+            <Pagination {offset} />
+        </div>
     {/if}
 </div>
 
@@ -35,10 +39,28 @@
 
 <style>
     .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 20px;
         margin: 30px 0;
+    }
+
+    .spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 100%;
+    }
+
+    .pagination {
+        margin-bottom: 30px;
     }
 </style>

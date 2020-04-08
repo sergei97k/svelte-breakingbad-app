@@ -14,13 +14,22 @@
 </script>
 
 <style>
+	:global(:root) {
+		--main-color: rgb(72, 127, 90);
+		--text-color: white;
+		--background-color: rgb(59, 59, 59);
+	}
+
 	.grid-container {
 		display: grid;
 		grid-gap: 0 20px;
 		grid-template-columns: 300px 1fr;
+		grid-template-rows: 77px 1fr;
 		grid-template-areas:
 				'header header header'
-				'sidebar main main'
+				'sidebar main main';
+		width: 100vw;
+		height: 100vh;
 	}
 
 	:global(.header) {
