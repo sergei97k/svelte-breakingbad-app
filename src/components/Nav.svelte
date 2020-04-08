@@ -13,7 +13,7 @@
 	.sidebar {
 		background-color: var(--background-color);
 		opacity: 0.8;
-		height: calc(100vh - 77px);
+		height: 100%;
 	}
 
 	ul {
