@@ -50,7 +50,6 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 20px;
-        margin: 30px 0;
     }
 
     .spinner {
@@ -61,6 +60,6 @@
     }
 
     .pagination {
-        margin-bottom: 30px;
+        margin-top: 30px;
     }
 </style>

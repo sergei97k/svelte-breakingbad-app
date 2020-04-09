@@ -22,7 +22,6 @@
 
 	.grid-container {
 		display: grid;
-		grid-gap: 0 20px;
 		grid-template-columns: 300px 1fr;
 		grid-template-rows: 77px 1fr;
 		grid-template-areas:
@@ -37,6 +36,7 @@
 	}
 	:global(.main) {
 		grid-area: main;
+		margin: 30px;
 	}
 	:global(.sidebar) {
 		grid-area: sidebar;

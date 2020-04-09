@@ -1,5 +1,5 @@
 <a rel="prefetch" href="characters/{character.char_id}" class="card">
-    <img src={character.img} alt="Avatar" style="width:100%">
+    <img src={character.img} alt="Avatar">
     <div class="container">
         <h4><b>{character.name}</b></h4>
         <p>{character.nickname}</p>
@@ -33,6 +33,7 @@
     }
 
     img {
+        width: 100%;
         border-radius: 5px 5px 0 0;
         max-height: 330px;
         object-fit: cover;
