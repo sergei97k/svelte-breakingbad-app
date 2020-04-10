@@ -69,8 +69,22 @@
     .no-results {
         position: absolute;
         top: 50%;
+        transform: translateX(-50%);
 
         font-size: 18px;
         color: grey;
+    }
+
+    @media screen and (max-width: 767px) {
+        .list {
+            grid-template-columns: 1fr;
+        }
+
+        .spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 </style>

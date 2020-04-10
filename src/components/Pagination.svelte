@@ -73,4 +73,10 @@
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
     }
+
+    @media screen and (max-width: 767px) {
+        .pagination a {
+            padding: 8px 13px;
+        }
+    }
 </style>

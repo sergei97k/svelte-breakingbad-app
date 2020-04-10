@@ -40,7 +40,7 @@
 
 	@media screen and (max-width: 767px) {
 		.sidebar {
-			height: 100%;
+			height: fit-content;
 		}
 	}
 </style>

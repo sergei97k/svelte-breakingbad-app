@@ -7,7 +7,8 @@
     header {
         background-color: var(--background-color);
         padding: 20px 30px;
-        position: sticky;
+        position: fixed;
+        width: calc(100% - 60px);
         top: 0;
         z-index: 999;
 
