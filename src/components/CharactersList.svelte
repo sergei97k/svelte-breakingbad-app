@@ -14,13 +14,16 @@
             {#each characters as character}
                 <Card {character} />
             {:else}
-                <p>No results</p>
+                <p class="no-results">No results</p>
             {/each}
         </div>
 
-        <div class="pagination">
-            <Pagination {offset} />
-        </div>
+
+        {#if characters.length}
+            <div class="pagination">
+                <Pagination {offset} />
+            </div>
+        {/if}
     {/if}
 </div>
 
@@ -61,5 +64,13 @@
 
     .pagination {
         margin-top: 30px;
+    }
+
+    .no-results {
+        position: absolute;
+        top: 50%;
+
+        font-size: 18px;
+        color: grey;
     }
 </style>

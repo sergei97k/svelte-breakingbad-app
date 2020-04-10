@@ -102,12 +102,30 @@
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
 
-    th, td {
+    td {
         text-align: left;
         padding: 16px;
     }
 
     tr:nth-child(even) {
         background-color: #f2f2f2;
+    }
+
+    @media screen and (max-width: 1023px) {
+        .character-page  {
+            grid-gap: 20px;
+            grid-template-columns: 1fr;
+            grid-template-areas: 'image'
+            'info';
+        }
+
+        .image img {
+            height: 300px;
+            object-fit: contain;
+
+            width: auto;
+            margin: auto;
+            display: block;
+        }
     }
 </style>

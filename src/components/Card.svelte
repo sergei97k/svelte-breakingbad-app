@@ -18,6 +18,10 @@
         max-width: 375px;
 
         text-decoration: none;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
     }
 
     .card:hover {
@@ -25,6 +29,7 @@
     }
 
     .container {
+        margin: 10px;
         padding: 2px 16px;
     }
 

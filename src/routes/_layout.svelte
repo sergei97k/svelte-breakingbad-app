@@ -27,8 +27,7 @@
 		grid-template-areas:
 				'header header header'
 				'sidebar main main';
-		width: 100vw;
-		height: 100vh;
+		height: 100%;
 	}
 
 	:global(.header) {
