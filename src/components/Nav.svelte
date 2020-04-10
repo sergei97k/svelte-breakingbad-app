@@ -1,6 +1,7 @@
 <nav class="sidebar">
 	<ul>
 		<li><a href='.' class:active={$page.path === '/'}>Home</a></li>
+		<li><a href='/about' class:active={$page.path === '/about'}>About</a></li>
 	</ul>
 </nav>
 
