@@ -50,6 +50,7 @@
 	@media screen and (max-width: 767px) {
 		.grid-container  {
 			grid-template-columns: 1fr;
+            grid-template-rows: 77px max-content;
 			grid-template-areas:
 					'header header'
 					'sidebar sidebar'
